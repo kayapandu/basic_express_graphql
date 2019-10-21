@@ -141,5 +141,5 @@ app.use('/graphql', express_graphql({
 }));
 
 
-app.listen(8080, () => console.log('App is running'));
+app.listen(process.env.PORT || 8080, () => console.log('App is running'));
 
