@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-let todoList = [
+const allTodoList = [
     {
         id: 1571667990080,
         title: 'Brush tooth',
@@ -27,6 +27,15 @@ let todoList = [
         isFinished: false
     },
 ];
+
+let todoList = allTodoList;
+
+const resetTodoList = () => {
+    todoList = allTodoList;
+}
+
+// Reset Todolist every 30 minute
+setInterval(resetTodoList, 1800000);
 
 // Rest API
 const getTodo = (req, res) => {
